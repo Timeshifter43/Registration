@@ -34,6 +34,7 @@ public class RegistrationServlet extends HttpServlet {
         System.out.println(userRegistered);
 
         if (userRegistered.equals("SUCCESS")) {
+            req.setAttribute("userName", userName);
             req.getRequestDispatcher("/Home.jsp").forward(req, resp);
         } else {
             req.setAttribute("err", regDao);
